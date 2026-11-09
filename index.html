@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#101622">
+  <title>Odd Orbit — Cosmic Defense</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">✦</div><div><h1>ODD ORBIT</h1><p>THE VERY STRANGE DEFENSE FORCE</p></div></div>
+      <div class="stats" aria-live="polite">
+        <div class="stat"><span class="stat-icon">♥</span><strong id="lives">20</strong><small>SHIELDS</small></div>
+        <div class="stat"><span class="stat-icon coin">◉</span><strong id="coins">260</strong><small>SCRAP</small></div>
+        <div class="stat wave-stat"><span class="stat-icon wave-icon">◷</span><strong id="wave">0 / 10</strong><small id="wave-count">READY</small></div>
+      </div>
+      <button class="icon-button" id="sound-btn" aria-label="Toggle sound" title="Sound on">♫</button>
+    </header>
+
+    <section class="game-layout">
+      <div class="arena-wrap">
+        <div class="arena-top"><span class="live-label"><i></i> SECTOR 7G</span><span class="objective">STOP THE SPACE WEIRDOS <b>↗</b></span><button class="icon-button speed-btn" id="speed-btn" aria-label="Change game speed">1×</button></div>
+        <canvas id="game" width="1000" height="620" aria-label="Tower defense playfield"></canvas>
+        <div class="toast" id="toast" role="status"></div>
+        <div class="mobile-hint">Tap a gadget, then tap a glowing pad to deploy it.</div>
+      </div>
+
+      <aside class="control-panel">
+        <div class="panel-heading"><div><span class="eyebrow">YOUR INVENTORY</span><h2>Pick a weirdo</h2></div><span class="tiny-star">✳</span></div>
+        <div class="tower-list" id="tower-list"></div>
+        <div class="selection-panel" id="selection-panel">
+          <div class="empty-select"><span class="empty-icon">⌖</span><strong>Nothing selected</strong><span>Choose a gadget or tap one on the map.</span></div>
+        </div>
+        <div class="bottom-controls">
+          <button class="launch-button" id="wave-btn"><span class="launch-icon">▶</span><span><b>Send the weirdos</b><small>Start wave 1 · 8 aliens</small></span><span class="launch-arrow">→</span></button>
+          <div class="footer-tools"><button id="cancel-btn" class="text-button">✕ Cancel build</button><button id="pause-btn" class="text-button">Ⅱ Pause</button></div>
+        </div>
+      </aside>
+    </section>
+    <footer class="footnote"><span>DEFEND THE WARP GATE · DON'T LET THEM THROUGH</span><span>TIP: Towers can be upgraded along <b>two very different paths</b>.</span></footer>
+  </main>
+  <div class="modal-backdrop" id="modal" hidden><div class="modal-card"><div class="modal-emoji" id="modal-emoji">✦</div><span class="eyebrow">SECTOR REPORT</span><h2 id="modal-title">A strange victory!</h2><p id="modal-copy"></p><button class="launch-button" id="restart-btn"><span class="launch-icon">↻</span><span><b>Play again</b><small>The galaxy still needs you</small></span><span class="launch-arrow">→</span></button></div></div>
+  <script src="game.js"></script>
+</body>
+</html>
